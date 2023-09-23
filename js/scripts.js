@@ -16,9 +16,6 @@ CLICKLINK.forEach((event) => {
     })
 })
 
-//Skip Home___________________________________________________
-
-
 //Active Scroll___________________________________________________
 const SECTIONS = document.querySelectorAll('.section')
 const MAINNAV = document.querySelector('.main-nav')
@@ -51,13 +48,9 @@ const GALLERYIMAGES = [
     { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
     { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '3' },
     { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' }
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' }
 ]
 
 function placeGallery() {
@@ -92,19 +85,15 @@ function sizeStick() {
     let chidrenSize = 0
     Array.from(STICKY.children).forEach(child => chidrenSize += child.offsetWidth)
 
-    STICKYCONTAINER.style.height = STICKYCONTAINER.scrollWidth - window.innerWidth / 2  + 'px'
+    STICKYCONTAINER.style.height = STICKYCONTAINER.scrollWidth - window.innerWidth / 2 + 'px'
 }
 
 window.addEventListener('scroll', stickyScroll)
 
 function stickyScroll() {
     let offTop = STICKY.parentElement.getBoundingClientRect().top
-    
-    let percent = offTop / STICKYCONTAINER.scrollWidth * 100
-    console.log(percent)
-    offTop = offTop > 0 ? 0 : offTop
 
+    offTop = offTop > 0 ? 0 : offTop 
     STICKYCONTAINER.style.transform = `translateX(${offTop}px)`
-
 }
 

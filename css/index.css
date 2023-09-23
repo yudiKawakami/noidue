@@ -9,6 +9,10 @@ body {
   min-height: 100%;
   font-size: 1.6rem;
   background-color: #fdfdfc;
+  contain: paint;
+}
+
+html {
   overflow-x: hidden;
 }
 
@@ -19,23 +23,28 @@ body {
   font-weight: 300;
 }
 
-:is(h1, h2, h3) {
+h1, h2 {
   font-style: italic;
+}
+
+h3 {
+  font-weight: 500;
+  color: #B9832F;
 }
 
 strong {
   font-weight: 500;
 }
 
-.section {
-  height: 100vh;
-  height: 100dvh;
-}
-
 .hide {
   position: absolute;
   opacity: 0;
   pointer-events: none;
+}
+
+.container {
+  width: min(1366px, 100%);
+  margin: 0 auto;
 }
 
 /* Preloader _____________________________________________________________ */
@@ -62,7 +71,7 @@ strong {
 }
 
 .pre-loader {
-  background-color: #eee;
+  background-color: #fdfdfc;
   position: fixed;
   inset: 0;
   z-index: 999;
@@ -235,14 +244,24 @@ strong {
   }
 }
 
-.section p {
+.section {
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+}
+.section--right {
+  justify-content: flex-end;
+}
+.section p, .section ul {
   font-size: 3rem;
   line-height: 1.3;
   text-align: justify;
 }
 @media (min-width: 768px) {
   .section__wrapper {
-    width: 80ch;
+    width: 85ch;
+  }
+  .section__wrapper--sobre {
     width: 80ch;
   }
 }
@@ -251,6 +270,37 @@ strong {
   font-size: 10rem;
   margin-bottom: 7rem;
 }
+.section__title span {
+  display: block;
+  color: #000;
+  font-style: normal;
+  font-size: 0.4em;
+  margin-bottom: -0.3em;
+}
+.section__holder {
+  display: flex;
+}
+.section__holder > * {
+  flex: 1;
+}
+.section__list {
+  padding-left: 1.5ch;
+}
+.section__list li {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.section__list h3 {
+  margin-left: -2ch;
+  margin-bottom: 1rem;
+}
+
+.obs {
+  text-align: right;
+  font-weight: 500;
+  color: #B9832F;
+  margin-top: 4rem;
+}
 
 /* Stick Section_________________________________________________________________________ */
 .sticky {
@@ -258,8 +308,6 @@ strong {
   top: 0;
   display: flex;
   flex-wrap: nowrap;
-  /* &-container
-  *  width: 100% */
 }
 
 /* Gellery_________________________________________________________________________ */
@@ -270,7 +318,7 @@ strong {
   grid-template-rows: repeat(3, 1fr);
   grid-auto-columns: 300px;
   grid-auto-rows: 0;
-  grid-auto-flow: column;
+  grid-auto-flow: column dense;
   width: max-content;
 }
 #gallery div {
