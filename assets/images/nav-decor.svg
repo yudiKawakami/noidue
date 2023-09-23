@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 644.51 25.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="Camada_1" data-name="Camada 1">
+    <path id="thickLineTwo" class="cls-1" d="m0,14.62v3.55h316.5l.46-.64-2.11-2.91H0Z"/>
+    <path id="thickLineOne" class="cls-1" d="m329.65,14.62l-2.11,2.91.46.64h316.5v-3.55h-314.86Z"/>
+    <polyline id="thinLine" class="cls-2" points="0 24.03 317.46 24.03 327.95 9.56 322.25 1.7 316.55 9.56 327.05 24.03 644.51 24.03"/>
+  </g>
+</svg>

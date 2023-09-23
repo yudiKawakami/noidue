@@ -5,16 +5,16 @@ window.addEventListener('load', document.body.classList.remove('loading'))
 const CLICKLINK = document.querySelectorAll('a[href^="#"]')
 CLICKLINK.forEach((event) => {
     let eventId = event.getAttribute("href")
-  
-  
+
+
     event.addEventListener('click', (ev) => {
-      ev.preventDefault()
-      //Scroll to ID
-      if (eventId) {
-        document.querySelector(eventId).scrollIntoView({ block: "start", behavior: "smooth" });
-      }
+        ev.preventDefault()
+        //Scroll to ID
+        if (eventId) {
+            document.querySelector(eventId).scrollIntoView({ block: "start", behavior: "smooth" });
+        }
     })
-  })
+})
 
 //Skip Home___________________________________________________
 
@@ -22,20 +22,16 @@ CLICKLINK.forEach((event) => {
 //Active Scroll___________________________________________________
 const SECTIONS = document.querySelectorAll('.section')
 const MAINNAV = document.querySelector('.main-nav')
+const STICKYNAV = document.querySelectorAll('.main-nav__link')
 
-window.addEventListener('scroll', () => {
-    SECTIONS.forEach(sec => {
-        let halfWindowHeigh = window.innerHeight /2
-
-        if(Math.floor(sec.getBoundingClientRect().top) <= halfWindowHeigh && Math.floor(sec.getBoundingClientRect().bottom) > halfWindowHeigh) {
-            let sectionId = sec.id
-            CLICKLINK.forEach(link=> {
-                if(link.href.includes(sectionId)) {
-                    link.classList.add('main-nav__link--active')
-                } else {
-                    link.classList.remove('main-nav__link--active')
-                }
-            })
-        }
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        STICKYNAV.forEach(link => {
+            if (link.href.includes(entry.target.id)) {
+                link.classList.toggle('main-nav__link--active', entry.isIntersecting)
+            }
+        })
     })
 })
+
+SECTIONS.forEach(section=> observer.observe(section))
