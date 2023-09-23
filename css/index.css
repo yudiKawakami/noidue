@@ -8,7 +8,7 @@
 body {
   min-height: 100%;
   font-size: 1.6rem;
-  background-color: #fff9f0;
+  background-color: #fdfdfc;
 }
 
 * {
@@ -200,7 +200,6 @@ strong {
   text-decoration: none;
   font-size: 2.8rem;
   color: #fff;
-  font-style: italic;
   font-weight: 300;
   padding: 1rem;
   text-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
