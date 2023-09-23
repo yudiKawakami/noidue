@@ -1,0 +1,71 @@
+//Text Stroke __________________________________________________
+@function text-stroke($size: 2, $color: #fff, $correction: 0)
+    $radius: $size - $correction
+    $stroke: ()
+
+    @for $i from -$size through $size
+        @for $k from -$size through $size
+
+            $x: $k
+            $y: $i
+
+            @if $k > 0
+                $x: $k - 0.5
+            @else if $k < 0
+                $x: $k + 0.5
+
+            @if $i > 0
+                $y: $i - 0.5
+            @else if $i < 0
+                $y: $i + 0.5
+
+            @if ($x*$x + $y*$y <= $radius*$radius)
+                $stroke: append($stroke, $i*1px $k*1px 0 $color, comma)
+
+    @return $stroke
+
+@mixin text-stroke($size: 2, $color: #fff, $correction: 0)
+    text-shadow: text-stroke($size, $color, $correction)
+
+//Media Queries_______________________________________________
+// Small devices
+@mixin sm
+    @media (min-width: #{$screen-sm-min})
+        @content
+
+@mixin max-sm
+    @media (max-width: #{$screen-sm-min - 1px})
+        @content
+
+// Medium devices
+@mixin md
+    @media (min-width: #{$screen-md-min})
+        @content
+
+@mixin max-md
+    @media (max-width: #{$screen-md-min - 1px})
+        @content
+
+// Large devices
+@mixin lg
+    @media (min-width: #{$screen-lg-min})
+        @content
+
+@mixin max-lg
+    @media (max-width: #{$screen-lg-min - 1})
+        @content
+
+// Extra large devices
+@mixin xl
+    @media (min-width: #{$screen-xl-min})
+        @content
+
+@mixin max-xl
+    @media (max-width: #{$screen-xl-min - 1})
+        @content
+
+// Custom devices
+@mixin rwd($screen)
+    @media (min-width: $screen+'px')
+        @content
+
