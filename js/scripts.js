@@ -101,9 +101,6 @@ function stickyScroll() {
     let offTop = STICKY.parentElement.getBoundingClientRect().top
     let percentage = (-offTop / window.innerHeight) * 100
 
-    console.log(percentage)
-    percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage
-
     offTop = offTop > 0 ? 0 : offTop
     STICKY.style.transform = `translateX(${offTop}px)`
 }
