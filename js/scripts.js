@@ -68,10 +68,10 @@ function placeGallery() {
         image.setAttribute("src", img.url)
         image.setAttribute("alt", img.alt)
 
-        
 
-        if(img.spanX)  setStyle+=`grid-column: span ${img.spanX};`
-        if(img.spanY)  setStyle+=`grid-row: span ${img.spanY};`
+
+        if (img.spanX) setStyle += `grid-column: span ${img.spanX};`
+        if (img.spanY) setStyle += `grid-row: span ${img.spanY};`
 
         div.setAttribute('style', setStyle)
         div.appendChild(image)
@@ -87,22 +87,26 @@ const STICKY = document.querySelector('.sticky')
 
 window.addEventListener('load', () => {
     let chidrenSize = 0
-    Array.from(STICKY.children).forEach(child => chidrenSize+=child.offsetWidth)
+    Array.from(STICKY.children).forEach(child => chidrenSize += child.offsetWidth)
 
     STICKYCONTAINER.style.height = chidrenSize + 'px'
 })
 
 
-STICKYCONTAINER.addEventListener('scroll',()=>alert(0))
+STICKYCONTAINER.addEventListener('scroll', () => alert(0))
 
-function stickyScroll(section) {
-    console.log(this)
-    const offTop = section.offsetTop
+window.addEventListener('scroll', stickyScroll)
 
-    let percentage = ((window.scrollY - offTop) / window.innerHeight) * 100
+function stickyScroll() {
+    let offTop = STICKY.parentElement.getBoundingClientRect().top
+    let percentage = (-offTop / window.innerHeight) * 100
+
+    console.log(percentage)
     percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage
 
-    STICKY.style.transform = `translateX(${-(percentage)}vw)`
+    offTop = offTop > 0 ? 0 : offTop
+    STICKY.style.transform = `translateX(${offTop}px)`
 }
 
-STICKYCONTAINER.removeEventListener('scroll', stickyScroll)
+
+
