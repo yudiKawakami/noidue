@@ -7,7 +7,7 @@ body
     min-height: 100%
     font-size: 1.6rem
     background-color: $beige
-
+    overflow-x: hidden
 *
     margin: 0
     padding: 0
@@ -21,13 +21,8 @@ strong
     font-weight: 500
 
 .section
-    min-height: 100vh
-
-.slide-container
-    display: flex
-    flex-wrap: nowrap
-    min-height: 100vh
-    min-height: 100dvh
+    height: 100vh
+    height: 100dvh
 
 .hide
     position: absolute
@@ -107,7 +102,7 @@ strong
     justify-content: center
     align-items: center
     background-color: #eee
-    background-image: url(/assets/images/home_bc.jpg)
+    background-image: url($homeBackground)
     background-position: left center
     background-size: cover
     background-attachment: fixed
@@ -154,7 +149,7 @@ strong
         flex-direction: row
         justify-content: center
         list-style: none
-        margin-bottom: 1rem
+        margin-bottom: .8rem
 
     &__item
         &:not(:last-child)
@@ -196,6 +191,8 @@ strong
     display: none
 
 .main-content
+    position: relative
+
     .section
         display: flex
         align-items: center
@@ -218,3 +215,31 @@ strong
         color: $golden
         font-size: 10rem
         margin-bottom: 7rem
+
+
+/* Stick Section_________________________________________________________________________ */
+.sticky
+    position: sticky
+    top: 0    
+    display: flex
+    flex-wrap: nowrap
+
+    //&-container
+
+/* Gellery_________________________________________________________________________ */
+#gallery
+    display: grid
+    gap: 20px
+    grid-template-columns: repeat(12, 300px)
+    grid-template-rows: repeat(3, 33%)
+    grid-auto-flow: dense
+
+    div
+        height: 100%
+        width: 100%
+
+    img
+        height: 100%
+        width: 100%
+        object-fit: cover
+        

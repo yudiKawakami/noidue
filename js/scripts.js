@@ -11,7 +11,7 @@ CLICKLINK.forEach((event) => {
         ev.preventDefault()
         //Scroll to ID
         if (eventId) {
-            document.querySelector(eventId).scrollIntoView({ block: "start", behavior: "smooth" });
+            document.querySelector(eventId).scrollIntoView({ block: "start", inline: "start", behavior: "smooth" });
         }
     })
 })
@@ -34,4 +34,75 @@ const observer = new IntersectionObserver(entries => {
     })
 })
 
-SECTIONS.forEach(section=> observer.observe(section))
+SECTIONS.forEach(section => observer.observe(section))
+
+//Gallery
+const GALLERY = document.querySelector('#gallery')
+const GALLERYIMAGES = [
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' }
+]
+
+function placeGallery() {
+    GALLERYIMAGES.forEach(img => {
+        let div = document.createElement('div')
+        let image = document.createElement('img')
+        let setStyle = ''
+        image.setAttribute("src", img.url)
+        image.setAttribute("alt", img.alt)
+
+        
+
+        if(img.spanX)  setStyle+=`grid-column: span ${img.spanX};`
+        if(img.spanY)  setStyle+=`grid-row: span ${img.spanY};`
+
+        div.setAttribute('style', setStyle)
+        div.appendChild(image)
+
+        GALLERY.appendChild(div)
+    })
+}
+placeGallery()
+
+//Side Scroll___________________________________________________
+const STICKYCONTAINER = document.querySelector('.sticky-container')
+const STICKY = document.querySelector('.sticky')
+
+window.addEventListener('load', () => {
+    let chidrenSize = 0
+    Array.from(STICKY.children).forEach(child => chidrenSize+=child.offsetWidth)
+
+    STICKYCONTAINER.style.height = chidrenSize + 'px'
+})
+
+
+STICKYCONTAINER.addEventListener('scroll',()=>alert(0))
+
+function stickyScroll(section) {
+    console.log(this)
+    const offTop = section.offsetTop
+
+    let percentage = ((window.scrollY - offTop) / window.innerHeight) * 100
+    percentage = percentage < 0 ? 0 : percentage > 400 ? 400 : percentage
+
+    STICKY.style.transform = `translateX(${-(percentage)}vw)`
+}
+
+STICKYCONTAINER.removeEventListener('scroll', stickyScroll)
