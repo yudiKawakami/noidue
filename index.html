@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="https://github.com/yudiKawakami/">
     <title>Noidue - Dia da Noiva</title>
     <meta name="description"
         content="Vai casar e já está pensando no seu “dia da noiva”? A NOIDUE Dia da Noiva gostaria de ter o prazer de atender a todas as expectativas que você criou em torno deste dia muito especial.">
@@ -30,7 +31,7 @@
     <!-- End Preloader -->
 
     <!-- Start Home -->
-    <section id='inicio' class="home section">
+    <section id='inicio' class="home section section--full-height">
 
         <div class="home__wrapper">
             <h1 class="hide">Noidue, Dia da Noiva</h1>
@@ -89,7 +90,7 @@
             <div class="sticky">
                 <!-- Start Sobre -->
                 <section id="sobre" class="section">
-                    <div class="section__wrapper  section__wrapper--sobre">
+                    <div class="section__wrapper  section__wrapper--sobre section--full-height">
                         <h2 class="section__title">Sobre nós</h2>
                         <p>Vai casar e já está pensando no seu “dia da noiva”?</p><br>
                         <p> A <strong>NOIDUE Dia da Noiva</strong> gostaria de ter o prazer de atender a todas as
@@ -102,7 +103,7 @@
                 <!-- End Sobre -->
 
                 <!-- Start Gallery -->
-                <section class="section">
+                <section class="section section--full-height">
                     <div id="gallery"></div>
                 </section>
                 <!-- End Gallery -->
@@ -263,7 +264,37 @@
 
         </div>
     </main>
+    <footer class="main-footer container section" id="contato">
+        <h2 class="section__title">Entre em contato!</h2>
+        <h3 class="section__sub-title">Afinal, realizar sonhos é com a gente mesmo! <br> Esperamos seu contato & sua visita</h3>
 
+        <form action="#" method="post" class="main-footer__form">
+            <input type="email" name="email" id="email" placeholder="Insira seu e-mail de contato" required>
+            <input type="text" name="assunto" id="assunto" placeholder="Sobre o que quer tratar?" required>
+            <textarea name="texto" id="texto" rows="10" placeholder="Digite aqui a sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <table class="main-footer__info">
+            <tr>
+                <th>E-mail</th>
+                <td><a href="mailto:noidue@diadanoiva.com" target="_blank">noidue@diadanoiva.com</a></td>
+            </tr>
+            <tr>
+                <th>Telefone</th>
+                <td><a href="tel:+551156668394">+55 (11) 5666-8394</a></td>
+            </tr>
+            <tr>
+                <th>Instagram</th>
+                <td><a href="https://www.instagram.com/noiduediadanoiva/" target="_blank" rel="noopener noreferrer">@noiduediadanoiva</a></td>
+            </tr>
+            <tr>
+                <th>Endereço</th>
+                <td>Avenida Rubéns Montanaro de Borba, 91<br> 
+                    São Paulo-SP CEP: 04811-140</td>
+            </tr>
+        </table>
+    </footer>
 </body>
 
 </html>
