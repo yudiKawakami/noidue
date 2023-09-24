@@ -103,7 +103,7 @@ window.addEventListener('scroll', stickyScroll)
 function stickyScroll() {
     let offTop = STICKY.parentElement.getBoundingClientRect().top
 
-    NAVBAR.classList.toggle('main-nav--active', offTop < 0)
+    NAVBAR.classList.toggle('main-nav--active', offTop <= 0)
 
     offTop = offTop > 0 ? 0 : offTop
 
