@@ -31,13 +31,20 @@
     <!-- End Preloader -->
 
     <!-- Start Home -->
-    <section id='inicio' class="home section section--full-height">
+    <section id='inicio' class="home section section--full-height main-nav__anchor" data-anchor="inicio">
 
         <div class="home__wrapper">
             <h1 class="hide">Noidue, Dia da Noiva</h1>
             <img src="assets/images/logo_noidue.svg" alt="Noidue, Dia da Noiva" class="home__logo">
 
             <nav class="home-nav">
+                
+                <div class="home-nav__burguer" title="Abrir Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
                 <svg data-name="decor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 644.51 25.03" class="decor">
                     <g id="Camada_1" data-name="Camada 1">
                         <path class="cls-1" d="m0,14.62v3.55h316.5l.46-.64-2.11-2.91H0Z" />
@@ -48,6 +55,7 @@
                 </svg>
                 <!-- Star Home Nav -->
                 <ul class="home-nav__list">
+                    <li class="home-nav__item"><a href="#inicio" class="home-nav__link">Início</a></li>                
                     <li class="home-nav__item"><a href="#sobre" class="home-nav__link">A Noidue</a></li>
                     <li class="home-nav__item"><a href="#suites" class="home-nav__link">Suites</a></li>
                     <li class="home-nav__item"><a href="#acompanhantes" class="home-nav__link">Acompanhantes</a></li>
@@ -75,28 +83,40 @@
     <main class="main-content">
         <nav class="main-nav">
             <ul class="main-nav__list">
-                <li class="main-nav__item"><a href="#inicio" class="main-nav__link">Início</a></li>
-                <li class="main-nav__item"><a href="#sobre" class="main-nav__link">A Noidue</a></li>
-                <li class="main-nav__item"><a href="#suites" class="main-nav__link">Suites</a></li>
-                <li class="main-nav__item"><a href="#acompanhantes" class="main-nav__link">Acompanhantes</a></li>
-                <li class="main-nav__item"><a href="#damas" class="main-nav__link">Damas de honra</a></li>
-                <li class="main-nav__item"><a href="#contato" class="main-nav__link">Contato</a></li>
+                <a href="#inicio" class="main-nav__link">
+                    <li class="main-nav__item">Início</li>
+                </a>
+                <a href="#sobre__wrapper" class="main-nav__link">
+                    <li class="main-nav__item">A Noidue</li>
+                </a>
+                <a href="#suites" class="main-nav__link">
+                    <li class="main-nav__item">Suites</li>
+                </a>
+                <a href="#acompanhantes" class="main-nav__link">
+                    <li class="main-nav__item">Acompanhantes</li>
+                </a>
+                <a href="#damas" class="main-nav__link">
+                    <li class="main-nav__item">Damas de honra</li>
+                </a>
+                <a href="#contato" class="main-nav__link">
+                    <li class="main-nav__item">Contato</li>
+                </a>
             </ul>
         </nav>
 
 
         <!-- Start Sticky -->
-        <div class="sticky-container">
+        <div class="sticky-container main-nav__anchor"  data-anchor="sobre__wrapper" id="sobre__wrapper">
             <div class="sticky">
                 <!-- Start Sobre -->
                 <section id="sobre" class="section">
                     <div class="section__wrapper  section__wrapper--sobre section--full-height">
                         <h2 class="section__title section__title--left">Sobre nós</h2>
-                        <p>Vai casar e já está pensando no seu “dia da noiva”?</p><br>
+                        <p><em>Vai casar e já está pensando no seu “dia da noiva”?</em></p>
                         <p> A <strong>NOIDUE Dia da Noiva</strong> gostaria de ter o prazer de atender a todas as
                             expectativas que você criou em torno deste dia muito especial. A nossa empresa é formada por
                             uma equipe de profissionais altamente qualificados e com larga experiência comprovada e
-                            aprovada pelas centenas de Noivas,Debutantes e convidados especiais atendidas ao longo dos
+                            aprovada pelas centenas de Noivas, Debutantes e convidados especiais atendidas ao longo dos
                             seus 18 anos de existência no mercado.</p>
                     </div>
                 </section>
@@ -113,101 +133,103 @@
 
         <div class="container">
 
-            <!-- Start Suites Iluminatta -->
-            <section class="section section--right" id="suites">
-                <div class="section__wrapper">
-                    <h2 class="section__title"><span>SUITES</span> Iluminatta</h2>
+            <div class="main-nav__anchor" data-anchor="suites">
+                <!-- Start Suites Iluminatta -->
+                <section class="section section--right" id="suites">
+                    <div class="section__wrapper">
+                        <h2 class="section__title"><span>SUITES</span> Iluminatta</h2>
 
-                    <div class="section__holder">
-                        <ul class="section__list">
-                            <h3>Teste da Noiva</h3>
-                            <li>Penteado</li>
-                            <li>Maquiagem em HD</li>
-                            <li>Design de Sobrancelhas</li>
-                            <li>Testes realizados na semana do evento*</li>
-                        </ul>
+                        <div class="section__holder">
+                            <ul class="section__list">
+                                <h3>Teste da Noiva</h3>
+                                <li>Penteado</li>
+                                <li>Maquiagem em HD</li>
+                                <li>Design de Sobrancelhas</li>
+                                <li>Testes realizados na semana do evento*</li>
+                            </ul>
 
-                        <ul class="section__list">
-                            <h3>Dia do Evento</h3>
-                            <li>Penteado</li>
-                            <li>Maquiagem em HD</li>
-                            <li>Colocação de Cílios Postiços</li>
-                            <li>Café da manhã ou da Tarde</li>
-                            <li>Roupão para utilização no dia</li>
-                            <li>Auxilio a Vestir</li>
-                        </ul>
+                            <ul class="section__list">
+                                <h3>Dia do Evento</h3>
+                                <li>Penteado</li>
+                                <li>Maquiagem em HD</li>
+                                <li>Colocação de Cílios Postiços</li>
+                                <li>Café da manhã ou da Tarde</li>
+                                <li>Roupão para utilização no dia</li>
+                                <li>Auxilio a Vestir</li>
+                            </ul>
+                        </div>
+
+                        <div class="obs">* Não realizamos testes aos Sábados, Domingos e Feriados.</div>
                     </div>
 
-                    <div class="obs">* Não realizamos testes aos Sábados, Domingos e Feriados.</div>
-                </div>
-
-                <div class="section__image-anchor">
-                    <div class="section__images">
-                        <div class="section__image-holder">
-                            <img src="https://placehold.co/600x600" alt="Alt da Imagem">
-                        </div>
-                        <div class="section__image-holder">
-                            <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                    <div class="section__image-anchor">
+                        <div class="section__images">
+                            <div class="section__image-holder">
+                                <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                            </div>
+                            <div class="section__image-holder">
+                                <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- End Suites Iluminatta -->
+                </section>
+                <!-- End Suites Iluminatta -->
 
-            <!-- Start Suites Splendore -->
-            <section class="section">
-                <div class="section__wrapper">
-                    <h2 class="section__title"><span>SUITES</span> Splendore</h2>
+                <!-- Start Suites Splendore -->
+                <section class="section">
+                    <div class="section__wrapper">
+                        <h2 class="section__title"><span>SUITES</span> Splendore</h2>
 
-                    <div class="section__holder">
-                        <ul class="section__list">
-                            <h3>Teste da Noiva</h3>
-                            <li>Penteado</li>
-                            <li>Maquiagem em HD</li>
-                            <li>Design de Sobrancelhas</li>
-                            <li>Testes realizados na semana do evento*</li>
-                        </ul>
+                        <div class="section__holder">
+                            <ul class="section__list">
+                                <h3>Teste da Noiva</h3>
+                                <li>Penteado</li>
+                                <li>Maquiagem em HD</li>
+                                <li>Design de Sobrancelhas</li>
+                                <li>Testes realizados na semana do evento*</li>
+                            </ul>
 
-                        <ul class="section__list">
-                            <h3>Dia do Evento</h3>
-                            <li>Penteado</li>
-                            <li>Maquiagem em HD</li>
-                            <li>Colocação de Cílios Postiços</li>
-                            <li>Manicure e Pedicure
-                                <span>Normal ou Francesa (retirada de cuticula e esmaltação)</span>
-                            </li>
-                            <li>Hidromassagem</li>
-                            <li>Café da manhã ou da Tarde</li>
-                            <li>Roupão para utilização no dia</li>
-                            <li>Auxilio a Vestir</li>
-                        </ul>
+                            <ul class="section__list">
+                                <h3>Dia do Evento</h3>
+                                <li>Penteado</li>
+                                <li>Maquiagem em HD</li>
+                                <li>Colocação de Cílios Postiços</li>
+                                <li>Manicure e Pedicure
+                                    <span>Normal ou Francesa (retirada de cuticula e esmaltação)</span>
+                                </li>
+                                <li>Hidromassagem</li>
+                                <li>Café da manhã ou da Tarde</li>
+                                <li>Roupão para utilização no dia</li>
+                                <li>Auxilio a Vestir</li>
+                            </ul>
+                        </div>
+
+                        <div class="obs">* Não realizamos testes aos Sábados, Domingos e Feriados.</div>
                     </div>
 
-                    <div class="obs">* Não realizamos testes aos Sábados, Domingos e Feriados.</div>
-                </div>
-
-                <div class="section__image-anchor">
-                    <div class="section__images">
-                        <div class="section__image-holder">
-                            <img src="https://placehold.co/600x600" alt="Alt da Imagem">
-                        </div>
-                        <div class="section__image-holder">
-                            <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                    <div class="section__image-anchor">
+                        <div class="section__images">
+                            <div class="section__image-holder">
+                                <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                            </div>
+                            <div class="section__image-holder">
+                                <img src="https://placehold.co/600x600" alt="Alt da Imagem">
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <!-- End Suites Splendore -->
+                </section>
+                <!-- End Suites Splendore -->
+            </div>
 
             <!-- Start Acompanhantes -->
-            <section class="section section--right" id="acompanhantes">
+            <section class="section section--right main-nav__anchor" id="acompanhantes" data-anchor="acompanhantes">
                 <div class="section__wrapper">
                     <h2 class="section__title">Acompanhantes*</h2>
 
                     <div class="section__holder">
                         <ul class="section__list">
                             <h3>Dia do Evento</h3>
-                            <li>Penteado</li>                            
+                            <li>Penteado</li>
                             <li>Maquiagem em HD</li>
                             <li>Colocação de Cílios Postiços</li>
                             <li>Lanche da Tarde</li>
@@ -232,21 +254,22 @@
             <!-- End Acompanhantes -->
 
             <!-- Start Damas de honra -->
-            <section class="section" id="damas">
+            <section class="section main-nav__anchor" id="damas" data-anchor="damas">
                 <div class="section__wrapper">
                     <h2 class="section__title">Damas de honra*</h2>
 
                     <div class="section__holder">
                         <ul class="section__list">
                             <h3>Dia do Evento</h3>
-                            <li>Penteado</li>                            
+                            <li>Penteado</li>
                             <li>Maquiagem em HD</li>
                             <li>Lanche da Tarde</li>
                             <li>Auxilio a Vestir</li>
                         </ul>
                     </div>
 
-                    <div class="obs">* Atendemos damas somente entre <strong>7 e 10 anos</strong>.<br> Acima dessa faixa etária será considerado o valor de acompanhante.</div>
+                    <div class="obs">* Atendemos damas somente entre <strong>7 e 10 anos</strong>.<br> Acima dessa faixa
+                        etária será considerado o valor de acompanhante.</div>
                 </div>
 
                 <div class="section__image-anchor">
@@ -263,10 +286,11 @@
             <!-- End Damas de honra -->
 
         </div>
-    </main>
-    <footer class="main-footer container section" id="contato">
+    
+    <footer class="main-footer container section main-nav__anchor" id="contato" data-anchor="contato">
         <h2 class="section__title">Entre em contato!</h2>
-        <h3 class="section__sub-title">Afinal, realizar sonhos é com a gente mesmo! <br> Esperamos seu contato & sua visita</h3>
+        <h3 class="section__sub-title">Afinal, realizar sonhos é com a gente mesmo! <br> Esperamos seu contato & sua
+            visita</h3>
 
         <form action="#" method="post" class="main-footer__form">
             <input type="email" name="email" id="email" placeholder="Insira seu e-mail de contato" required>
@@ -286,15 +310,17 @@
             </tr>
             <tr>
                 <th>Instagram</th>
-                <td><a href="https://www.instagram.com/noiduediadanoiva/" target="_blank" rel="noopener noreferrer">@noiduediadanoiva</a></td>
+                <td><a href="https://www.instagram.com/noiduediadanoiva/" target="_blank"
+                        rel="noopener noreferrer">@noiduediadanoiva</a></td>
             </tr>
             <tr>
                 <th>Endereço</th>
-                <td>Avenida Rubéns Montanaro de Borba, 91<br> 
+                <td>Avenida Rubéns Montanaro de Borba, 91<br>
                     São Paulo-SP CEP: 04811-140</td>
             </tr>
         </table>
     </footer>
+</main>
 </body>
 
 </html>

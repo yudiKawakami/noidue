@@ -10,7 +10,6 @@ body
     min-height: 100%
     font-size: 1.6rem
     background-color: $beige
-    contain: paint
 
 html
     overflow-x: hidden
@@ -148,45 +147,112 @@ strong
             width: 100%
 
 .home-nav
-    display: none
-
-    @include md
-        display: block
-        margin-top: 5rem
-        transition: all .5s
-
     &__list
         display: flex
-        flex-direction: row
-        justify-content: center
         list-style: none
-        margin-bottom: .8rem
-
-    &__item
-        &:not(:last-child)
-            &::after
-                content: ''
-                position: relative
-                display: inline-block
-                width: .5rem
-                height: .5rem
-                background: #fff
-                //box-shadow: 0 0 1rem rgba(#000,.4)
-                transform: translateY(-75%) rotate(45deg)
 
     &__link
         text-decoration: none
-        font-size: 2.8rem
-        color: #fff
-        font-weight: 300
-        padding: 1rem
-        text-shadow: 0 0 0 rgba(#fff, .5)
-        display: inline-block
-        transition: text-shadow .3s, transform .3s
 
-        &:hover
-            text-shadow: 0 0 1rem rgba(#fff, .8)
-            transform: scale(1.1)
+    @include md
+        margin-top: 5rem
+        transition: all .5s
+
+        &__burguer
+            display: none
+
+        &__list
+            flex-direction: row
+            justify-content: center
+            margin-bottom: .8rem
+
+        &__item
+            &:first-of-type
+                display: none
+            &:not(:last-child)
+                &::after
+                    content: ''
+                    position: relative
+                    display: inline-block
+                    width: .5rem
+                    height: .5rem
+                    background: #fff
+                    //box-shadow: 0 0 1rem rgba(#000,.4)
+                    transform: translateY(-75%) rotate(45deg)
+
+        &__link
+            font-size: 2.8rem
+            font-weight: 300
+            color: #fff
+            padding: 1rem
+            text-shadow: 0 0 0 rgba(#fff, .5)
+            display: inline-block
+            transition: text-shadow .3s, transform .3s
+
+            &:hover
+                text-shadow: 0 0 1rem rgba(#fff, .8)
+                transform: scale(1.1)
+
+    @include max-md
+        position: fixed
+        top: 3rem
+        right: 3rem
+        z-index: 999
+
+        .decor
+            display: none
+
+        &__burguer
+            height: 50px
+            width: 50px
+            background-color: rgba($beige, .4)
+            backdrop-filter: blur(4px)
+            padding: 2rem
+            cursor: pointer
+
+            span
+                position: absolute
+                left: 0
+                right: 0
+                width: 70%
+                height: 4px
+                background-color: #868686
+                margin: 0 auto
+
+                &:nth-child(1)
+                    top: 20%
+
+                &:nth-child(2)
+                    top: 0
+                    bottom: 0
+                    margin: auto
+
+                &:nth-child(3)
+                    bottom: 20%
+
+        &__list
+            position: absolute
+            flex-flow: column
+            right: 0
+            top: calc( 100% + 1rem)
+            background-color: rgba($beige, .5)
+            backdrop-filter: blur(4px)
+            height: 0
+            overflow: hidden
+
+            &--active
+                height: max-content
+                border: 1px solid
+
+        &__link
+            padding: .8rem 2rem
+            font-size: 3rem
+            white-space: nowrap
+            color: #000
+            display: block
+
+            &:hover
+                text-shadow: 0 0 3px rgba(#000,.4)
 
 /* SVG___________________________________________________________________________ */
 
@@ -204,15 +270,97 @@ strong
     stroke: #fff
     stroke-width: 2px
 
-:not(.loading)
-    
+/* Sobre */
+
+#sobre
+    height: 100vh
+    height: 100dvh
 
 /* Main Content____________________________________________________________________ */
 .main-nav
-    display: none
+    position: sticky
+    z-index: 99
+    top: 3.5rem
+    left: 0
+    right: 0
+    margin: 0 auto
+    font-size: 2rem
+    width: fit-content
+    height: 0
+    margin-top: 5rem
+    transition: opacity 1s
+    opacity: 0
+
+    @include max-md
+        display: none
+
+    &--active
+        opacity: 1
+
+    &::before
+        content: ''
+        position: absolute
+        inset: 0
+        background-color: rgba($beige, .5)
+        backdrop-filter: blur(4px)
+        width: 100%
+        height: 4rem
+        transform: translate(-2.5rem, -33%)
+        padding: 2.5rem
+
+    &__burguer
+        display: none
+
+    &__link
+        display: inline-block
+        position: relative
+        color: $golden
+        padding: .8rem
+        &:hover
+            .main-nav__item
+                transform: translateX(-50%) scaleY(1)
+
+        &::before
+            content: ''
+            height: 1rem
+            aspect-ratio: 1/1
+            display: block
+            border: 2px solid $golden
+            transform: rotate(45deg)
+
+        &--active
+            &::after
+                content: ''
+                height: .6rem
+                aspect-ratio: 1/1
+                background-color: $golden
+                position: absolute
+                transform: rotate(45deg)
+                inset: 0
+                margin: 1.2rem auto 0
+
+            .main-nav__item
+                transform: translateX(-50%) scaleY(1)
+
+        & + &
+            margin-left: 12rem
+
+    &__list
+        list-style: none
+
+    &__item
+        text-decoration: none
+        display: block
+        position: absolute
+        white-space: nowrap
+        left: 1.6rem
+        top: 100%
+        transform: translateX(-50%) scaleY(0)
+        transition: transform .3s
 
 .main-content
     position: relative
+    contain: paint
 
     .section
         display: flex
@@ -225,20 +373,22 @@ strong
     position: relative
 
     &:not(.section--full-height):not(#sobre)
-        opacity: 0
-        transform: translateY(5vh)
-        transition: opacity 1.25s .2s, transform 1.25s .2s 
+        > *
+            opacity: 0
+            transform: translateY(5vh)
+            transition: opacity 1.25s .2s, transform 1.25s .2s
 
         &.section--active
-            opacity: 1
-            transform: translateY(0)
-        
+            > *
+                opacity: 1
+                transform: translateY(0)
+
     @include md
         min-height: 100vh
         min-height: 100dvh
 
     @include max-md
-        padding: 8rem 5rem
+        padding: 5rem
 
     &--full-height
         height: 100vh
@@ -251,7 +401,7 @@ strong
             order: 1
 
         .section__images
-            right: 30%
+            right: 10rem
             left: auto
 
     p,.section__list
@@ -269,6 +419,8 @@ strong
 
         &--sobre
             width: calc( 100vw - 13rem )
+            max-height: 100%
+            height: fit-content
 
             @include sm
                 width: 70vw
@@ -282,8 +434,9 @@ strong
         line-height: 1
 
         @include max-md
-            font-size: 8rem
+            font-size: 7rem
             text-align: center
+            margin-bottom: 3rem
 
         &--left
             text-align: left !important
@@ -350,7 +503,7 @@ strong
         gap: 2rem
         position: absolute
         top: 0
-        left: 30%
+        left: 10rem
 
     &__image-holder
         position: relative
@@ -419,7 +572,7 @@ strong
 
     &__form
         width: min(1024px, 100%)
-        margin-top: 5rem
+        margin: 5rem auto 0
 
         input,textarea
             padding: 1rem
@@ -450,6 +603,8 @@ strong
         border-collapse: collapse
         text-align: left
         font-size: 2rem
+        width: fit-content
+        margin: 2rem auto 0
 
         th
             color: $golden
