@@ -28,8 +28,10 @@ const observer = new IntersectionObserver(entries => {
                 link.classList.toggle('main-nav__link--active', entry.isIntersecting)
             }
         })
+
+        entry.target.classList.toggle('section--active', entry.isIntersecting)
     })
-})
+},{rootMargin: '-30%'})
 
 SECTIONS.forEach(section => observer.observe(section))
 
@@ -96,4 +98,3 @@ function stickyScroll() {
     offTop = offTop > 0 ? 0 : offTop 
     STICKYCONTAINER.style.transform = `translateX(${offTop}px)`
 }
-

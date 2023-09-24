@@ -258,6 +258,15 @@ strong {
 .section {
   position: relative;
 }
+.section:not(.section--full-height):not(#sobre) {
+  opacity: 0;
+  transform: translateY(5vh);
+  transition: opacity 1.25s 0.2s, transform 1.25s 0.2s;
+}
+.section:not(.section--full-height):not(#sobre).section--active {
+  opacity: 1;
+  transform: translateY(0);
+}
 @media (min-width: 860px) {
   .section {
     min-height: 100vh;
@@ -369,8 +378,12 @@ strong {
   font-style: italic;
 }
 .section__list h3 {
-  margin-left: -2ch;
   margin-bottom: 1rem;
+}
+@media (min-width: 860px) {
+  .section__list h3 {
+    margin-left: -2ch;
+  }
 }
 .section__image-anchor {
   flex: 1;
@@ -414,6 +427,7 @@ strong {
 @media (max-width: 859px) {
   .obs {
     text-align: center;
+    font-size: 2.2rem;
   }
 }
 
