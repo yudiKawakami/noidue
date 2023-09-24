@@ -140,7 +140,7 @@ strong {
   justify-content: center;
   align-items: center;
   background-color: #eee;
-  background-image: url("/assets/images/home_bc.jpg");
+  background-image: url("../assets/images/home_bc.jpg");
   background-position: left center;
   background-size: cover;
   background-attachment: fixed;
@@ -289,7 +289,7 @@ strong {
   order: 1;
 }
 .section--right .section__images {
-  right: 50%;
+  right: 30%;
   left: auto;
 }
 .section p, .section .section__list {
@@ -305,7 +305,7 @@ strong {
 }
 @media (min-width: 860px) {
   .section__wrapper {
-    width: 100ch;
+    width: min(100ch, 85%);
   }
 }
 .section__wrapper--sobre {
@@ -332,6 +332,9 @@ strong {
     font-size: 8rem;
     text-align: center;
   }
+}
+.section__title--left {
+  text-align: left !important;
 }
 .section__title span {
   display: block;
@@ -405,7 +408,7 @@ strong {
   gap: 2rem;
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 30%;
 }
 .section__image-holder {
   position: relative;

@@ -251,7 +251,7 @@ strong
             order: 1
 
         .section__images
-            right: 50%
+            right: 30%
             left: auto
 
     p,.section__list
@@ -265,7 +265,7 @@ strong
         align-self: center
         width: 100%
         @include md
-            width: 100ch
+            width: min(100ch, 85%)
 
         &--sobre
             width: calc( 100vw - 13rem )
@@ -280,9 +280,13 @@ strong
         font-size: 10rem
         margin-bottom: 7rem
         line-height: 1
+
         @include max-md
             font-size: 8rem
             text-align: center
+
+        &--left
+            text-align: left !important
 
         span
             display: block
@@ -303,6 +307,7 @@ strong
 
         > *
             flex: 1
+
     &__list
         @include md
             padding-left: 1.5ch
@@ -345,7 +350,7 @@ strong
         gap: 2rem
         position: absolute
         top: 0
-        left: 50%
+        left: 30%
 
     &__image-holder
         position: relative
