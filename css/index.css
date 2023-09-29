@@ -542,7 +542,7 @@ strong {
 }
 @media (min-width: 860px) {
   .section__list h3 {
-    margin-left: -2ch;
+    margin-left: -1.5ch;
   }
 }
 .section__image-anchor {
