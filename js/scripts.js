@@ -92,9 +92,6 @@ window.addEventListener('load', sizeStick)
 window.addEventListener('resize', sizeStick)
 
 function sizeStick() {
-    let chidrenSize = 0
-    Array.from(STICKY.children).forEach(child => chidrenSize += child.offsetWidth)
-
     STICKYCONTAINER.style.height = STICKYCONTAINER.scrollWidth - window.innerWidth / 2 + 'px'
 }
 
