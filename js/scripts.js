@@ -1,20 +1,20 @@
 const GALLERY = document.querySelector('#gallery')
 const GALLERYIMAGES = [
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '2' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '4', spanY: '2' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
-    { url: 'https://placehold.co/600x600', alt: 'Alt da Imagem', spanX: '2', spanY: '' }
+    { url: 'assets/images/grid/grid_01.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
+    { url: 'assets/images/grid/grid_02.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
+    { url: 'assets/images/grid/grid_03.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '2' },
+    { url: 'assets/images/grid/grid_04.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
+    { url: 'assets/images/grid/grid_05.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '3' },
+    { url: 'assets/images/grid/grid_06.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '' },
+    { url: 'assets/images/grid/grid_07.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
+    { url: 'assets/images/grid/grid_08.jpg', alt: 'Alt da Imagem', spanX: '4', spanY: '2' },
+    { url: 'assets/images/grid/grid_09.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
+    { url: 'assets/images/grid/grid_10.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '' },
+    { url: 'assets/images/grid/grid_11.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '3' },
+    { url: 'assets/images/grid/grid_12.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '3' },
+    { url: 'assets/images/grid/grid_13.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
+    { url: 'assets/images/grid/grid_14.jpg', alt: 'Alt da Imagem', spanX: '', spanY: '2' },
+    { url: 'assets/images/grid/grid_15.jpg', alt: 'Alt da Imagem', spanX: '2', spanY: '' }
 ]
 
 
